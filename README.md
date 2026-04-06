@@ -8,19 +8,19 @@ The game focuses on strategic prediction, dynamic tile values, and clean, scalab
 ## 🎮 Game Preview
 
 ### 🏠 Landing Page
-![Landing Page](docs/image/Screenshot1.png)
+![Landing Page](docs/images/Screenshot1.png)
 
 ### 🎯 Gameplay Screen
-![Gameplay](docs/image/Screenshot2.png)
+![Gameplay](docs/images/Screenshot2.png)
 
-![Gameplay](docs/image/Screenshot3.png)
+![Gameplay](docs/images/Screenshot3.png)
 
-![Gameplay](docs/image/Screenshot4.png)
+![Gameplay](docs/images/Screenshot4.png)
 
-![Gameplay](docs/image/Screenshot5.png)
+![Gameplay](docs/images/Screenshot5.png)
 
 ### 📊 End Screen
-![End Screen](docs/image/Screenshot6.png)
+![End Screen](docs/images/Screenshot6.png)
 
 ---
 
