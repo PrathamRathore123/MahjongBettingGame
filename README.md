@@ -143,16 +143,17 @@ Game ends when:
 The project is designed for **scalability and extension**.
 
 
-src/
-├── app/ # View controller & routing
-├── components/ # UI components (screens, panels, walkthrough)
-├── data/ # Static data (tutorial steps)
-├── game/
-│ ├── engine/ # Core logic (deck, rules, reducer)
-│ └── models/ # Type definitions
-├── hooks/ # Session & walkthrough logic
-└── services/ # External services (leaderboard storage)
-
+```
+└── src/
+    ├── app/            # Main application component and view controller
+    ├── components/     # Reusable React components for screens, UI elements, and the tutorial
+    ├── data/           # Static data for the tutorial steps
+    ├── game/           # Core game logic, decoupled from the UI
+    │   ├── engine/     # Deck management, honor scaling, game over rules, and state reducer
+    │   └── models/     # TypeScript type definitions for all game entities
+    ├── hooks/          # Custom hooks for managing the game session and walkthrough state
+    └── services/       # Services for interacting with browser APIs, like localStorage for the leaderboard
+```
 
 ### Key Principles
 
