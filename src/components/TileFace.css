@@ -1,0 +1,136 @@
+.tile-face {
+  --tile-depth: 12px;
+  --tile-shadow: rgba(0, 0, 0, 0.32);
+  position: relative;
+  width: 100px;
+  min-height: 132px;
+  border-radius: 11px;
+  border: 1px solid rgba(160, 139, 90, 0.46);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.66), transparent 42%),
+    linear-gradient(175deg, #f7f1df 0%, #e8dcc1 100%);
+  color: #1f2a33;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    0 1px 0 rgba(255, 253, 241, 0.9) inset,
+    0 14px 26px var(--tile-shadow);
+  transform-origin: center bottom;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.tile-face::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(-1 * var(--tile-depth));
+  height: var(--tile-depth);
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(180deg, #dbcb9f 0%, #b79d62 100%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tile-face:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 1px 0 rgba(255, 253, 241, 0.92) inset,
+    0 20px 32px rgba(0, 0, 0, 0.4);
+}
+
+.tile-face__glyph {
+  font-size: 2.7rem;
+  font-weight: 500;
+  line-height: 1;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.52));
+  font-family:
+    "Segoe UI Symbol",
+    "Noto Sans Symbols 2",
+    "Noto Sans Symbols",
+    "Apple Symbols",
+    sans-serif;
+}
+
+.tile-face__sub {
+  margin-top: 0.34rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(34, 46, 57, 0.72);
+}
+
+.tile-face__value {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  min-width: 1.16rem;
+  min-height: 1.16rem;
+  border-radius: 999px;
+  background: rgba(17, 53, 45, 0.9);
+  color: #effbf5;
+  font-size: 0.63rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  padding: 0.16rem 0.28rem;
+}
+
+.tile-face--suit-bamboo .tile-face__glyph {
+  color: #1f7e4f;
+}
+
+.tile-face--suit-dots .tile-face__glyph {
+  color: #2f6992;
+}
+
+.tile-face--suit-characters .tile-face__glyph {
+  color: #a13a32;
+}
+
+.tile-face--dragon-red .tile-face__glyph {
+  color: #b4342f;
+}
+
+.tile-face--dragon-green .tile-face__glyph {
+  color: #2c8651;
+}
+
+.tile-face--dragon-white .tile-face__glyph {
+  color: #6f7f8b;
+}
+
+.tile-face--wind-east .tile-face__glyph,
+.tile-face--wind-south .tile-face__glyph,
+.tile-face--wind-west .tile-face__glyph,
+.tile-face--wind-north .tile-face__glyph {
+  color: #30516b;
+}
+
+.tile-face--compact {
+  --tile-depth: 7px;
+  width: 54px;
+  min-height: 74px;
+  border-radius: 8px;
+}
+
+.tile-face--compact .tile-face__glyph {
+  font-size: 1.52rem;
+}
+
+.tile-face--compact .tile-face__sub {
+  margin-top: 0.18rem;
+  font-size: 0.35rem;
+  letter-spacing: 0.05em;
+}
+
+.tile-face--compact .tile-face__value {
+  right: 4px;
+  top: 4px;
+  font-size: 0.45rem;
+  min-width: 0.84rem;
+  min-height: 0.84rem;
+  padding: 0.11rem 0.14rem;
+}

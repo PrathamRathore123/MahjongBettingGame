@@ -1,0 +1,103 @@
+.app-shell {
+  min-height: 100vh;
+  padding: clamp(0.85rem, 2.2vw, 1.8rem);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.12), transparent 30%),
+    radial-gradient(circle at 90% 0%, rgba(212, 175, 55, 0.08), transparent 33%),
+    linear-gradient(160deg, #081f1b 0%, #0f2f2a 48%, #123d35 100%);
+}
+
+.app-frame {
+  position: relative;
+  overflow: hidden;
+  width: min(1220px, 100%);
+  margin: 0 auto;
+  border-radius: 26px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.04), transparent 40%),
+    linear-gradient(150deg, rgba(10, 44, 38, 0.9), rgba(9, 36, 32, 0.88));
+  box-shadow:
+    0 0 0 1px rgba(255, 237, 188, 0.08) inset,
+    0 28px 80px rgba(0, 0, 0, 0.48);
+  padding: clamp(0.85rem, 1.8vw, 1.2rem);
+}
+
+.app-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px) 0 0 / 26px 26px,
+    linear-gradient(0deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px) 0 0 / 26px 26px;
+  mix-blend-mode: soft-light;
+  opacity: 0.58;
+}
+
+.app-frame > * {
+  position: relative;
+  z-index: 1;
+}
+
+.app-frame--modal-open .game-screen {
+  filter: blur(2px) saturate(0.9);
+}
+
+.app-fallback {
+  border-radius: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(9, 34, 30, 0.66);
+  padding: 1.3rem;
+  text-align: center;
+  animation: stage-in 260ms ease;
+}
+
+.app-fallback p {
+  margin: 0;
+  color: rgba(213, 231, 217, 0.9);
+}
+
+.app-fallback button {
+  margin-top: 0.8rem;
+  border: 1px solid rgba(212, 175, 55, 0.36);
+  border-radius: 11px;
+  background: linear-gradient(180deg, #f3d57b, #cda53a);
+  color: #1b2f27;
+  padding: 0.58rem 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 130ms ease, filter 130ms ease;
+}
+
+.app-fallback button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+.app-fallback button:focus-visible {
+  outline: 2px solid rgba(246, 227, 165, 0.9);
+  outline-offset: 3px;
+}
+
+@keyframes stage-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}

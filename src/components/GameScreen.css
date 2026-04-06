@@ -1,0 +1,279 @@
+.game-screen {
+  display: grid;
+  gap: 1rem;
+  animation: stage-fade-up 260ms ease;
+}
+
+.game-screen__top {
+  border-radius: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background:
+    linear-gradient(145deg, rgba(16, 55, 47, 0.66), rgba(10, 35, 31, 0.58)),
+    rgba(10, 37, 32, 0.72);
+  padding: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow:
+    0 0 0 1px rgba(255, 239, 185, 0.06) inset,
+    0 10px 25px rgba(0, 0, 0, 0.28);
+}
+
+.game-screen__exit {
+  border: 1px solid rgba(212, 175, 55, 0.48);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(26, 67, 57, 0.86), rgba(17, 45, 39, 0.85));
+  color: #efe1b2;
+  padding: 0.58rem 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+  transition: transform 140ms ease, filter 140ms ease, box-shadow 140ms ease;
+}
+
+.game-screen__exit:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.32);
+}
+
+.game-screen__exit:active {
+  transform: translateY(0);
+}
+
+.game-screen__exit:focus-visible {
+  outline: 2px solid rgba(246, 227, 165, 0.9);
+  outline-offset: 3px;
+}
+
+.game-screen__metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(108px, 1fr));
+  gap: 0.52rem;
+  width: min(100%, 650px);
+}
+
+.game-screen__stat {
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background:
+    linear-gradient(170deg, rgba(22, 67, 57, 0.55), rgba(11, 37, 32, 0.48)),
+    rgba(14, 43, 37, 0.68);
+  padding: 0.5rem 0.62rem;
+  display: grid;
+  gap: 0.18rem;
+  box-shadow:
+    0 0 0 1px rgba(255, 239, 188, 0.05) inset,
+    0 0 10px rgba(212, 175, 55, 0.1);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.game-screen__stat:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(255, 239, 188, 0.1) inset,
+    0 0 16px rgba(212, 175, 55, 0.2);
+}
+
+.game-screen__stat span {
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(231, 241, 231, 0.78);
+}
+
+.game-screen__stat strong {
+  color: #f2d484;
+  text-shadow: 0 0 8px rgba(227, 174, 47, 0.3);
+  font-size: 1.16rem;
+  line-height: 1.1;
+}
+
+.game-screen__main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 0.95rem;
+}
+
+.game-screen__board {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background:
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.14), transparent 40%),
+    linear-gradient(160deg, rgba(12, 44, 38, 0.72), rgba(8, 32, 28, 0.62));
+  padding: 1rem;
+  box-shadow:
+    0 0 0 1px rgba(255, 240, 190, 0.05) inset,
+    0 15px 36px rgba(0, 0, 0, 0.34);
+}
+
+.game-screen__board::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+}
+
+.game-screen__hand-wrap {
+  transition: transform 200ms ease;
+}
+
+.game-screen__actions {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.72rem;
+}
+
+.game-screen__action {
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 0.92rem;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease, box-shadow 120ms ease;
+}
+
+.game-screen__action:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.game-screen__action:active {
+  transform: translateY(0);
+}
+
+.game-screen__action:focus-visible {
+  outline: 2px solid rgba(246, 227, 165, 0.9);
+  outline-offset: 3px;
+}
+
+.game-screen__action:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.game-screen__action--higher {
+  background: linear-gradient(180deg, #4fae6e 0%, #2d7f4b 100%);
+  border-color: rgba(157, 237, 176, 0.34);
+  box-shadow: 0 9px 24px rgba(35, 148, 88, 0.34), 0 0 14px rgba(88, 219, 133, 0.24);
+  color: #f4fff0;
+}
+
+.game-screen__action--lower {
+  background: linear-gradient(180deg, #c14a46 0%, #8f302d 100%);
+  border-color: rgba(255, 189, 189, 0.28);
+  box-shadow: 0 9px 24px rgba(170, 48, 44, 0.34), 0 0 14px rgba(217, 85, 85, 0.22);
+  color: #fff2f2;
+}
+
+.game-screen__right-panel {
+  display: grid;
+  gap: 0.92rem;
+}
+
+.game-screen--win .game-screen__board::after {
+  animation: win-flash 420ms ease;
+}
+
+.game-screen--loss .game-screen__hand-wrap {
+  animation: loss-shake 360ms ease;
+}
+
+.game-screen--loss .game-screen__board::after {
+  animation: loss-flash 420ms ease;
+}
+
+@keyframes stage-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes win-flash {
+  0% {
+    opacity: 0;
+    background: radial-gradient(circle at center, rgba(103, 255, 150, 0.34), transparent 60%);
+  }
+  42% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    background: radial-gradient(circle at center, rgba(103, 255, 150, 0.18), transparent 60%);
+  }
+}
+
+@keyframes loss-flash {
+  0% {
+    opacity: 0;
+    background: radial-gradient(circle at center, rgba(255, 104, 104, 0.32), transparent 60%);
+  }
+  42% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    background: radial-gradient(circle at center, rgba(255, 104, 104, 0.16), transparent 60%);
+  }
+}
+
+@keyframes loss-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+@media (max-width: 1120px) {
+  .game-screen__main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 820px) {
+  .game-screen__metrics {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .game-screen__top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .game-screen__metrics {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .game-screen__actions {
+    grid-template-columns: 1fr;
+  }
+}

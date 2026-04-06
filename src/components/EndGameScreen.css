@@ -1,0 +1,117 @@
+.end-screen {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(2, 14, 12, 0.52);
+  backdrop-filter: blur(8px);
+  z-index: 12;
+  animation: overlay-in 220ms ease;
+}
+
+.end-screen__summary {
+  width: min(100%, 460px);
+  border-radius: 22px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background:
+    radial-gradient(circle at 24% -10%, rgba(212, 175, 55, 0.18), transparent 40%),
+    linear-gradient(165deg, rgba(10, 43, 36, 0.96), rgba(10, 31, 28, 0.95));
+  text-align: center;
+  padding: 1.5rem 1.2rem;
+  box-shadow:
+    0 0 0 1px rgba(255, 240, 188, 0.08) inset,
+    0 24px 70px rgba(0, 0, 0, 0.52);
+  animation: modal-up 260ms ease;
+}
+
+.end-screen__label {
+  margin: 0;
+  color: rgba(247, 233, 183, 0.88);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.end-screen__summary h1 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2.6rem, 10vw, 4rem);
+  color: #f5d67b;
+  text-shadow: 0 0 12px rgba(232, 183, 57, 0.35);
+}
+
+.end-screen__caption {
+  margin: 0.1rem 0 0;
+  color: rgba(225, 238, 225, 0.85);
+  font-size: 0.94rem;
+}
+
+.end-screen__reason {
+  margin: 0.72rem auto 0;
+  max-width: 38ch;
+  color: rgba(197, 223, 197, 0.86);
+  font-size: 0.84rem;
+}
+
+.end-screen__actions {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.72rem;
+  flex-wrap: wrap;
+}
+
+.end-screen__actions button {
+  border: 0;
+  border-radius: 12px;
+  padding: 0.72rem 1.08rem;
+  font-size: 0.94rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #14261f;
+  background: linear-gradient(180deg, #f3d57b, #cda53a);
+  box-shadow: 0 8px 20px rgba(168, 119, 23, 0.36);
+  transition: transform 140ms ease, filter 140ms ease;
+}
+
+.end-screen__actions button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.end-screen__actions button:active {
+  transform: translateY(0);
+}
+
+.end-screen__actions button:focus-visible {
+  outline: 2px solid rgba(245, 225, 159, 0.9);
+  outline-offset: 3px;
+}
+
+.end-screen__actions .end-screen__exit {
+  color: #dce6de;
+  background: rgba(15, 45, 39, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.42);
+  box-shadow: none;
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
