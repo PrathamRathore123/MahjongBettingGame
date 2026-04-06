@@ -5,6 +5,9 @@ The game focuses on strategic prediction, dynamic tile values, and clean, scalab
 
 ---
 
+## Deployment link of the game  :-##
+https://mahjongbettinggame.vercel.app/
+
 ## 🎮 Game Preview
 
 ### 🏠 Landing Page
