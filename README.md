@@ -170,16 +170,23 @@ The project is designed for **scalability and extension**.
 ```bash
 git clone https://github.com/prathamrathore123/mahjongbettinggame.git
 cd mahjongbettinggame
-2. Install Dependencies
-npm install
-3. Run Development Server
-npm run dev
+```
 
+2. Install Dependencies
+```bash
+npm install
+```
+3. Run Development Server
+```bash
+npm run dev
+```
 App will run at:
 👉 http://localhost:5173
 
 📦 Build
+```bash
 npm run build
+```
 🧪 Scripts
 npm run dev → Start dev server
 npm run build → Production build
@@ -232,25 +239,4 @@ Full Stack Developer
 This project focuses not just on gameplay, but on clean architecture, scalability, and user experience, making it ready for extension and real-world use.
 
 
----
 
-# 🎯 What you need to do now
-
-### 1. Add images
-Put images in:
-
-docs/image/
-
-
-Rename them exactly:
-- `landing.png`
-- `gameplay.png`
-- `end.png`
-
----
-
-### 2. Push changes
-```bash
-git add .
-git commit -m "Enhanced README with images and assessment alignment"
-git push
