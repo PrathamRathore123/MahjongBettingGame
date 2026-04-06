@@ -29,7 +29,7 @@ function LandingPage({ leaderboard, onNewGame, onHowToPlay }: LandingPageProps) 
 
       <section className="relative z-[2] mx-auto flex h-full w-full max-w-[700px] flex-col items-center justify-center">
         <h1 className="landing-title-font text-center text-[46px] font-extrabold leading-none tracking-[0.01em] text-[#d4af37] drop-shadow-[0_3px_10px_rgba(0,0,0,0.58)]">
-          Hand Betting Game
+          Mahjong Betting Game
         </h1>
 
         <div className="mt-4 flex items-end justify-center gap-1.5" aria-hidden>

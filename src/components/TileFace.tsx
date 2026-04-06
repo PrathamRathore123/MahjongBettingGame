@@ -48,7 +48,7 @@ const dragonLabelMap = {
 
 const toGlyph = (codepoint: number) => String.fromCodePoint(codepoint);
 
-function TileFace({ tile, compact = false, animateIndex }: TileFaceProps) {
+function TileFace({ tile,  compact = false, animateIndex }: TileFaceProps) {
   const suitTone =
     tile.kind === "number"
       ? tile.suit === "characters"
@@ -78,22 +78,18 @@ function TileFace({ tile, compact = false, animateIndex }: TileFaceProps) {
         ? windLabelMap[tile.honor]
         : dragonLabelMap[tile.honor];
 
-  const tileSize = compact
-    ? "h-[48px] w-[36px] rounded-[10px] sm:h-[52px] sm:w-[38px]"
-    : "h-[108px] w-[78px] rounded-[12px] sm:h-[132px] sm:w-[96px] md:h-[150px] md:w-[110px] md:rounded-[16px]";
-  const glyphSize = compact
-    ? "text-[28px] leading-none sm:text-[32px]"
-    : "text-[70px] leading-[0.8] sm:text-[86px] md:text-[98px]";
-  const labelClass = compact ? "hidden" : "hidden text-[11px] sm:block md:text-[12px]";
+  const tileSize = compact ? "h-[55px] w-[45px] rounded-[10px]" : "h-[150px] w-[110px] rounded-[16px]";
+  const glyphSize = compact ? "text-[32px] leading-none" : "text-[98px] leading-[0.8]";
+  const labelClass = compact ? "hidden" : "text-[12px]";
   const slideDelay = typeof animateIndex === "number" ? `${animateIndex * 70}ms` : "0ms";
 
   return (
     <article
       className={[
-        "group relative flex shrink-0 flex-col items-center justify-between ",
+        "group relative flex shrink-0 flex-col items-center justify-center gap-5 ",
         "bg-gradient-to-b from-[#fbf6e6] via-[#f5f0dc] to-[#eee4c7]",
         tileSize,
-        "px-1.5 pb-1.5 pt-1 shadow-[0_12px_20px_rgba(0,0,0,0.45)] transition-all duration-200 ease-out sm:px-2 sm:pb-2 sm:pt-1.5",
+        "px-2 pb-2 pt-1.5 shadow-[0_12px_20px_rgba(0,0,0,0.45)] transition-all duration-200 ease-out",
         compact ? "" : "hover:-translate-y-1",
       ].join(" ")}
       style={{ animation: "draw-in 360ms ease both", animationDelay: slideDelay }}
@@ -103,7 +99,7 @@ function TileFace({ tile, compact = false, animateIndex }: TileFaceProps) {
       <span className={`${glyphSize} ${suitTone} mt-0.5 drop-shadow-[0_3px_2px_rgba(0,0,0,0.25)]`} aria-label={tile.label}>
         {glyph}
       </span>
-      <span className={`${labelClass}  capitalize tracking-wide text-[#5b4f2d] text-[15px] opacity-90`}>{subtitle}</span>
+      <span className={`${labelClass} font-extrabold capitalize tracking-wide text-[#5b4f2d] text-[13px] opacity-90`}>{subtitle}</span>
     </article>
   );
 }
