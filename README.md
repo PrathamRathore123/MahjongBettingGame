@@ -165,6 +165,22 @@ The project is designed for **scalability and extension**.
 - Modular, feature-ready structure
 
 ---
+## 🤖 AI Usage Disclosure
+
+This project was developed using a combination of manual implementation and AI-assisted tooling.
+
+### Handwritten / Manually Developed
+- Game logic (tile system, betting, reshuffle, scoring)
+- State management and architecture design
+- Component structure and application flow
+- Final validation and debugging
+
+### AI-Assisted Areas
+- UI/UX ideation suggestions
+- README formatting and documentation improvements
+- Minor refinements in styling and interaction patterns
+
+All AI-generated suggestions were reviewed, modified, and integrated manually to ensure correctness and alignment with requirements.
 
 ## 🚀 Getting Started
 
